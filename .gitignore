@@ -1,0 +1,74 @@
+# Ignore Python bytecode:
+*.py[co]
+*.pyc
+
+# Packaging files:
+*.egg*
+
+# Sphinx docs:
+build
+
+# SQLite3 database files:
+*.db
+
+# Logs:
+*.log
+
+# Eclipse
+.project
+.pydevproject
+.settings
+
+# Linux Editors
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+*.swp
+*.swo
+
+# Mac
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Jetbrains
+.idea/
+.pycharm_helpers/
+
+# Var
+var/*
+!var/.gitkeep
+!var/static/.gitkeep
+!var/postgres/.gitkeep
+
+# Vagrant
+.vagrant/
+
+configs/server/nginx/eright/hasty/opticaldynamics/src/*
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+!.elasticbeanstalk/config.yml
+
+# Media
+media/*
+
+# test reports
+reports/
+src/
+# Coverage files
+.coverage.*
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
