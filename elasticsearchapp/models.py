@@ -11,6 +11,9 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField(max_length=1000)
 
+    def __str__(self):
+        return '[{}-{}]'.format(self.author, self.title)
+
     # Add indexing method to BlogPost
     def indexing(self):
         obj = BlogPostIndex(
