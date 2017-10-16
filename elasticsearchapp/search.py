@@ -1,5 +1,5 @@
 from elasticsearch_dsl.connections import connections
-from elasticsearch_dsl import DocType, Text, Date, Search
+from elasticsearch_dsl import DocType, Search, Mapping, field as dsl_field
 from elasticsearch.helpers import bulk
 from elasticsearch import Elasticsearch
 
@@ -7,12 +7,24 @@ from . import models
 
 connections.create_connection()
 
+_m = Mapping('content')
+_m.meta('dynamic_templates', [
+    {
+      "dates": {
+            "path_match": "data.*_date",
+            "mapping": {
+              "type": "date"
+            },
+      }
+    },
+])
+
 
 class BlogPostIndex(DocType):
-    author = Text()
-    posted_date = Date()
-    title = Text()
-    text = Text()
+    author = dsl_field.Text
+    posted_date = dsl_field.Date
+    title = dsl_field.Text
+    text = dsl_field.Text
 
     class Meta:
         index = 'blogpost-index'
